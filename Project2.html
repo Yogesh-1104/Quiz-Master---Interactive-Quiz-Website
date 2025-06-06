@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Project2.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Quiz Master</h1>
+        <p>Test your knowledge in different fields!</p>
+    </header>
+    <!-- Name Input Section -->
+    <div class="name-input-section">
+        <h2>Enter Your Name</h2>
+        <input type="text" id="userName" placeholder="Your Name" required>
+        <div><button onclick="startQuizSelection()">Log in</button></div>
+    </div>
+
+    <!-- Quiz Selection Section -->
+    <div class="quiz-selection" style="display:none;">
+        <h2>Select Field & Difficulty</h2>
+        <label for="field">Field:</label>
+        <select id="field">
+            <option value="History">History</option>
+            <option value="Science">Science</option>
+            <option value="Literature">Literature</option>
+            <option value="Mathematics">Mathematics</option>
+        </select>
+        <br>
+        <label for="difficulty">Difficulty:</label>
+        <select id="difficulty">
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+        </select>
+        <br>
+        <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Container -->
+    <div class="quiz-container" id="quizContainer" style="display:none;">
+        <div id="questionContainer"></div>
+    </div>
+
+    <!-- Result Section -->
+    <div class="result" id="result" style="display:none;">
+        <h2>Quiz Completed</h2>
+        <p id="score"></p>
+        <button onclick="generateCertificate()">Generate Certificate</button>
+        <button onclick="restartQuiz()">Restart Quiz</button>
+    </div>
+
+    <!-- Certificate Display -->
+  <div id="certificate" class="certificate" style="display: none;">
+    <h3>Quiz Master</h3>
+    <h3>Certificate of Completion</h3>
+    <p>This has to certify that</p>
+    <div class="name" id="nameDisplay"></div>
+    <p style="font-style: italic;" id="completionStatement"></p>
+    <div class="date" id="dateDisplay"></div>
+    <div class="signature">Signature</div>
+  </div>
+
+    <footer>
+        <p>Quiz Master &copy; 2024</p>
+    </footer>
+
+    <script src="Project2.js"></script>
+</body>
+</html>
